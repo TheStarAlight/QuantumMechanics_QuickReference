@@ -1,0 +1,15 @@
+*.aux
+*.log
+*.out
+*.synctex*
+*.toc
+*latexmk
+*.fls
+*.xdv
+*.bbl
+*.bcf
+*.blg
+*.xml
+.vscode/
+
+*.pdf

@@ -1,0 +1,80 @@
+\section{自旋-1/2体系}
+
+% ===============
+\subsection{Pauli表象}
+
+对于自旋-1/2体系，Pauli表象选取$s_z=\pm\frac12\hbar$（即$\ket{\up},\ket{\down}$）的本征态作为描述系统状态的基矢。
+
+定义满足
+\begin{equation}
+    \bm{s} = \frac{\hbar}{2}\bm{\sigma}
+\end{equation}
+的单位化Pauli自旋算符$\bm{\sigma}$，其各分量表为
+\begin{equation}
+    \sigma_z = \begin{pmatrix}1& 0\\0&-1\end{pmatrix}, \quad
+    \sigma_x = \begin{pmatrix}0& 1\\1& 0\end{pmatrix}, \quad
+    \sigma_y = \begin{pmatrix}0&-\ii\\ \ii& 0\end{pmatrix}.
+\end{equation}
+其满足
+\begin{equation}
+    \sigma_i^2 = 1, \quad
+    \sigma_i\sigma_j = \ii \epsilon_{ijk}\sigma_k \quad (i\ne j)
+\end{equation}
+
+在计算单自旋-1/2粒子量子态的含时演化时，一般情形需直接求解二分量\schrodinger 方程：
+\begin{equation}
+    \ii\hbar\begin{pmatrix}\dot{\psi}_+\\ \dot{\psi}_-\end{pmatrix} =
+    H \begin{pmatrix}\psi_+\\ \psi_-\end{pmatrix}.
+\end{equation}
+但若Hamiltonian能表为$\bm{\sigma}$的分量的线性组合（例如：$H=E_0\sigma_i$），可利用结论
+\begin{equation}
+    \ee^{\ii \bm{\alpha}\cdot\bm{\sigma}} = \cos(\alpha) + \ii \sin(\alpha) (\hat{\bm{\alpha}}\cdot\bm{\sigma}),
+\end{equation}
+而无需变换至$\sigma_i$表象。
+该结论可利用$\ee^{\ii \bm{\alpha}\cdot\bm{\sigma}}$的Taylor展开式证明，类似的证明亦是考点之一。
+
+% ===============
+\subsection{双自旋-1/2粒子}
+
+描述双自旋-1/2粒子的量子态，有两种表象：
+\begin{itemize}
+    \item \emph{非耦合表象}：选取$s_{1z}, s_{2z}$为好量子数；
+    \item \emph{耦合表象}：设$\bm{S}=\bm{s_1}+\bm{s_2}$为合角动量，选取$S^2, S_z$为好量子数。
+\end{itemize}
+
+非耦合表象选取的基底为
+\begin{equation}
+    \ket{\sigma_{1z}\sigma_{2z}} =\quad \ket{\up\up}, \quad \ket{\up\down}, \quad \ket{\down\up}, \quad \ket{\down\down}.
+\end{equation}
+直积态的矩阵表示可用Kroncker积计算，注意Kronecker积的运算规则：
+\begin{equation}
+    A \otimes B =
+    \begin{pmatrix}
+        A_{11}B & A_{12}B & \cdots \\
+        A_{21}B & A_{22}B & \cdots \\
+        \vdots  & \vdots  & \ddots \\
+    \end{pmatrix}
+\end{equation}
+
+耦合表象选取的基底为
+\begin{equation}
+    \ket{\sigma \sigma_z} = \quad \underbrace{\ket{11}, \quad \ket{10}, \quad \ket{1-1}}_{\text{triplet}}, \quad \underbrace{\ket{00}}_{\text{singlet}}.
+\end{equation}
+由于
+\begin{equation}
+    \bm{S}^2 = \frac{\hbar^2}{2}(3+\bm{\sigma_1}\cdot\bm{\sigma_2}),
+\end{equation}
+可在非耦合表象下求取$\bm{\sigma_1}\cdot\bm{\sigma_2}$的本征值为$1,1,-3,1$，分别对应
+\begin{equation}
+    \ket{11}=\ket{\up\up},\quad \ket{10}=\frac{1}{\sqrt{2}}(\ket{\up\down}+\ket{\down\up}),\quad \ket{1-1}=\ket{\down\down}, \quad \ket{00}=\frac{1}{\sqrt{2}}(\ket{\up\down}-\ket{\down\up}).
+\end{equation}
+
+对于两个全同Bose和Fermi子，由于对称性限制，无法取以上所有的态！
+全同Bose子仅能取三重态$\ket{11}, \ket{10}, \ket{1-1}$，而全同Fermi子只能取单重态$\ket{00}$.
+
+如果一个双粒子体系组成的量子态能表为单粒子态的直积，则称为可分离态，否则，称为纠缠态。
+Bell基是一组完备的双粒子自旋-1/2系统的基底，是四个最大纠缠态：
+\begin{equation}
+    \ket{\psi^{\pm}}=\frac{1}{\sqrt{2}}(\ket{\up\down}\pm\ket{\down\up}),\quad
+    \ket{\phi^{\pm}}=\frac{1}{\sqrt{2}}(\ket{\up\up}\pm\ket{\down\down}).
+\end{equation}

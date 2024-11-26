@@ -1,0 +1,25 @@
+\section{中心力场中的氢原子}
+
+中心力场中的氢原子，选取质心坐标和自然单位制，波函数为
+\begin{equation}
+    \psi_{nlm}(\rr) = Y_{lm}(\theta,\phi) R_{nl}(r),
+\end{equation}
+
+\begin{itemize}
+    \item 角动量平方的期望值$\expval{\LL^2}=l(l+1)\hbar^2$；
+    \item 角动量$z$分量的期望值$\expval{L_z}=m\hbar$。
+\end{itemize}
+
+计算$r^n$物理量的期望值时，可以采用如下的策略：
+\begin{equation}
+\begin{aligned}
+    \expval{r^n}
+    &= \frac{\int 4\pi r^2 \dd r \dd\Omega \ Y_{lm}^*(\theta,\phi) r^n Y_{lm}(\theta,\phi) R_{nl}(r)^2}{\int4\pi r^2 \dd r \dd\Omega \ Y_{lm}^*(\theta,\phi) Y_{lm}(\theta,\phi) R_{nl}(r)^2} \\
+    &= \frac{\int\dd r \ r^{n+2} R_{nl}(r)^2}{\int\dd r \ r^2 R_{nl}(r)^2},
+\end{aligned}
+\end{equation}
+其中$R_{nl}(r)$是多项式$P(r)$与$\ee^{-r/na_0}$的乘积，因此问题最后可以归结为求解一个重要积分：
+\begin{equation}
+    \int_0^\infty \dd t \ t^{N} \ee^{-t} = \Gamma(N+1) = N!,
+\end{equation}
+读者应牢记。

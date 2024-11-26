@@ -1,0 +1,120 @@
+\section{算符对易关系}
+
+% ===============
+\subsection{基本思路}
+
+\emph{基本对易关系}
+\begin{equation}
+    [x,p] = i \hbar.
+\end{equation}
+
+\emph{常用规则}
+\begin{itemize}
+    \item 交换取负：$[A,B] = -[B,A]$；
+    \item ``加法分配律''：$[\alpha A+\beta B,C] = [\alpha A,C]+[\beta B,C]$；
+    \item ``乘法分配律''（前推前，后推后）：
+    \begin{equation}
+        [A, \blue{B}\red{C}] = [A,\blue{B}] \red{C} + \blue{B}[A,\red{C}].
+    \end{equation}
+\end{itemize}
+
+\emph{含矢量对易子的处理方法}
+\begin{itemize}
+    \item 若对易子本身为矢量，可以考虑将其分解为各个方向的分量。\\
+    例如：要证$\LL\times\pp+\pp\times\LL = 2\ii\hbar\pp$，分别证明其三个分量成立即可，以$x$方向为例：$(\LL\times\pp+\pp\times\LL)_x = [p_y,L_z]+[L_y,p_z] = 2\ii\hbar p_x$。
+    \item 对易子中含$\rr^2,\pp^2,\LL^2$的，考虑拆为分量形式。\\
+    例如：$\rr^2=x^2+y^2+z^2$。
+    \item 对易子中矢量的内积与外积同样满足``乘法分配律''：
+    \begin{equation}
+    \begin{aligned}
+        \relax
+        [A, \blue{\bm{B}}\cdot\red{\bm{C}}] &= [A,\blue{\bm{B}}]\cdot\red{\bm{C}} + \blue{\bm{B}}\cdot[A,\red{\bm{C}}], \\
+        [A, \blue{\bm{B}}\times\red{\bm{C}}] &= [A,\blue{\bm{B}}]\times\red{\bm{C}} + \blue{\bm{B}}\times[A,\red{\bm{C}}].
+    \end{aligned}
+    \end{equation}
+    \item 外积的定义：
+    \begin{equation}
+        \bm{\blue{A}}\times\bm{\red{B}} =
+        \begin{vmatrix}
+            \hat{\bm{x}} & \hat{\bm{y}} & \hat{\bm{z}} \\
+            \blue{A_x} & \blue{A_y} & \blue{A_z} \\
+            \red{B_x} & \red{B_y} & \red{B_z}
+        \end{vmatrix}
+    \end{equation}
+\end{itemize}
+
+% ===============
+\subsection{坐标、动量与角动量的对易子}
+
+牢记以下对易关系：
+\begin{equation}
+\begin{aligned}
+    \relax
+    [r_i, p_j] &= \ii\hbar\delta_{ij}, \\
+	[L_i, r_j] &= \ii\hbar\epsilon_{ijk} r_k, \\
+    [L_i, p_j] &= \ii\hbar\epsilon_{ijk} p_k, \\
+    [L_i, L_j] &= \ii\hbar\epsilon_{ijk} L_k,
+\end{aligned}
+\end{equation}
+这里$\epsilon_{ijk}$是Levi-Civita符号，仅在$i\ne j\ne k$时不为零，在$ijk$为偶排列时为$1$，奇排列时为$-1$。
+
+角动量的分量式有时能派用场：
+\begin{equation}
+    \LL = \rr\times\pp =
+    \begin{vmatrix}
+        \hat{\bm{x}} & \hat{\bm{y}} & \hat{\bm{z}} \\
+        x & y & z \\
+        p_x & p_y & p_z \\
+    \end{vmatrix}
+    = \underbrace{(y p_z - z p_y)}_{L_x} \hat{\bm{x}} + \underbrace{(z p_x - x p_z)}_{L_y} \hat{\bm{y}} + \underbrace{(x p_y - y p_x)}_{L_z} \hat{\bm{z}}.
+\end{equation}
+
+% ===============
+\subsection{``幂次''公式}
+
+我们设$[A, B] = C$，且$C$与$A$与$B$均对易。
+容易证明``幂次''公式
+\begin{equation}
+\begin{aligned}
+    \relax
+    [A,B^n]
+    &= [A,\blue{B}\cdot \red{B^{n-1}}] \\
+    &= \blue{B} [A, \red{B^{n-1}}] + \underbrace{[A, \blue{B}]}_C \red{B^{n-1}} \\
+    &= B^2 [A, B^{n-2}] + 2C B^{n-1} \\
+    &= \cdots \\
+    &= n C B^{n-1}.
+\end{aligned}
+\end{equation}
+
+这一公式可以进一步推广至$[A,f(B)]$的情形。
+我们假定$f(B)$是解析函数，于是
+\begin{equation}
+\begin{aligned}
+    \relax
+    [A,f(B)]
+    &= \left[A, \sum_n \frac{f_n}{n!} B^n\right] \\
+    &= \sum_n \frac{f_n}{n!} [A, B^n] \\
+    &= C \sum_n \frac{f_n}{(n-1)!} B^{n-1} \\
+    &= C \frac{\pd f(B)}{\pd B}.
+\end{aligned}
+\end{equation}
+
+对于$A,B$是坐标与动量（的函数）这一特殊情形，有
+\begin{equation}
+\begin{aligned}
+    \relax
+    [\rr, f(\rr,\pp)] = \ii\hbar\nabla_{\pp} f(\rr,\pp), \\
+    [\pp, f(\rr,\pp)] = -\ii\hbar\nabla_{\rr} f(\rr,\pp).
+\end{aligned}
+\end{equation}
+取一例：
+\begin{equation}
+    [\pp, \frac{1}{r}] = [p_x \hat{\bm{x}} + p_y \hat{\bm{y}} + p_z \hat{\bm{z}}, \frac{1}{r}] = -\ii\hbar \nabla \frac{1}{r} = \ii\hbar \frac{\hat{\bm{r}}}{r^2}.
+\end{equation}
+这里的$\nabla_{\rr}, \nabla_{\pp}$应当理解为\emph{``对算符求导数''}。
+虽然看起来与$\rr,\pp$算符在彼此的表象中的形式
+\begin{equation}
+    \rr^{(\pp)}\equiv\ii\hbar\nabla_{\pp},
+    \quad \pp^{(\rr)}\equiv-\ii\hbar\nabla_{\rr}
+\end{equation}
+完全一样，但本质完全不同！

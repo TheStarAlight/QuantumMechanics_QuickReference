@@ -1,0 +1,53 @@
+\section{角动量}
+
+% ===============
+\subsection{升降算符}
+
+升降算符定义为
+\begin{equation}
+    L_\pm = L_x \pm \ii L_y,
+\end{equation}
+从角动量算符对易关系可得升降算符满足的关系：
+\begin{equation}
+\begin{aligned}
+    L_\pm L_\mp = L^2 - L_z^2 \pm \hbar L_z, \\
+    L_x^2 + L_y^2 = L^2 - L_z^2 = \frac12 \left(L_\pm L_\mp + L_\mp L_\pm \right), \\
+    [L_z, L_\pm] = \pm \hbar L_\pm, \\
+    [L^2, L_\pm] = [L^2, L_z] = 0.
+\end{aligned}
+\end{equation}
+
+升降算符对角动量态的作用效果：
+\begin{equation}
+\begin{aligned}
+    L_+ \ket{lm} &= \sqrt{l(l + 1) - m(m + 1)} \ket{l, m+1},\\
+    L_- \ket{lm} &= \sqrt{l(l + 1) - m(m - 1)} \ket{l, m-1},
+\end{aligned}
+\end{equation}
+这里矩阵元的正负号可利用$L_+\ket{ll}=0$与$L_-\ket{l-l}=0$助记。
+
+有时需要求解$L_x, L_y$的矩阵元，可利用
+\begin{equation}
+    L_x = \frac12 (L_+ + L_-), \quad L_y = \frac{1}{2\ii} (L_+ - L_-).
+\end{equation}
+
+% ===============
+\subsection{角动量的耦合}
+
+角动量的\emph{非耦合表象}：选取$L_1^2, L_2^2, L_{1z}, L_{2z}$力学量，以对应的$l_1,l_2,m_1,m_2$作为好量子数。
+$m_1, m_2$的取值范围：
+\begin{equation}
+    -l_1 \le m_1 \le l_1,\quad -l_2 \le m_2 \le l_2.
+\end{equation}
+
+\emph{耦合表象}：选取$L_1^2, L_2^2, L^2=(\bm{L}_1 +\bm{L}_2)^2, L_z = L_{1z} + L_{2z}$力学量，以对应的$l_1,l_2,l,m$作为好量子数。
+$l,m$的取值范围：
+\begin{equation}
+    \abs{l_1-l_2}\le l \le l_1+l_2,\quad -l \le m \le l.
+\end{equation}
+
+两个表象之间的变换矩阵元：
+\begin{equation}
+    \braket{l_1m_1l_2m_2}{l_1l_2lm} = C_{l_1m_1l_2m_2}^{lm},
+\end{equation}
+称为Clebsch-Gordan (CG)系数。

@@ -1,0 +1,44 @@
+\section{定态微扰}
+
+我们设体系的Hamiltonian为$H=H_0+H'$，未扰Hamiltonian $H_0$的第$m$个本征态表为$\ket{\psi_m^{(0)}}$，对应能级$E_m^{(0)}$。
+$\ket{\psi_m}$能量与本征态的$i$阶微扰修正用$E_m^{(i)}$和
+\begin{equation}
+    \ket{\psi_m^{(i)}} = \sum_n c_{mn}^{(i)} \ket{\psi_n^{(0)}}
+\end{equation}
+表示。这样，修正后能量与本征态表为
+\begin{equation}
+    E_m=E_m^{(0)}+E_m^{(1)}+\cdots, \quad \ket{\psi_m}=\ket{\psi_m^{(0)}}+\ket{\psi_m^{(1)}}+\cdots.
+\end{equation}
+
+\begin{itemize}
+    \item \emph{一阶定态微扰的能量修正值}
+    \begin{equation}
+        E_m^{(1)} = \bra{\psi_m^{(0)}}H'\ket{\psi_m^{(0)}} = H'_{mm}.
+    \end{equation}
+    \item \emph{一阶定态微扰的本征态修正}
+    \begin{equation}
+        \ket{\psi_m^{(1)}} = \sum_n c_{mn}^{(1)} \ket{\psi_m^{(0)}},
+    \end{equation}
+    \begin{equation}
+        c_{mn}^{(1)} = \begin{cases}
+            \frac{H'_{nm}}{E_m^{(0)}-E_n^{(0)}} & \text{for } m \neq n, \\
+            0 & \text{for } m = n.
+        \end{cases}
+    \end{equation}
+    \item \emph{二阶定态微扰的能量修正值}
+    \begin{equation}
+        E_m^{(2)} = \sum_{n\ne m} \frac{\abs{H'_{mn}}^2}{E_m^{(0)}-E_n^{(0)}}.
+    \end{equation}
+\end{itemize}
+
+对于未扰Hamiltonian存在简并能量本征态的情况下，不能直接应用以上公式，需要先行选择一组特殊的未扰基矢$\ket{\psi_m^{(0)}}$。
+设原先的一组未扰简并能量本征态为$\ket{\phi_i}$（$i=1,\cdots,N$），求出关于本征值$E^{(1)}$的久期（secular）方程
+\begin{equation}
+    \det \left(H' - E^{(1)}\mathbf{I} \right) =
+    \det \begin{pmatrix}
+        H'_{11}-E^{(1)} & H'_{12} & \cdots & H'_{1N} \\
+        H'_{21} & H'_{22}-E^{(1)} & \cdots & H'_{2N} \\
+        \vdots & \vdots & \ddots & \vdots \\
+    \end{pmatrix} = 0
+\end{equation}
+对应的解$E_m^{(1)}$，并求解出对应于这些本征值的本征矢$\psi_m^{(0)}$，即可作为未扰基矢，对应的一阶能量修正已由$E_m^{(1)}$给出。

@@ -1,0 +1,42 @@
+\section{Landau能级}
+
+粒子在电磁场中的Hamiltonian：
+\begin{equation}
+    H = \frac{1}{2m}\left(\pp-\frac{q}{c}\AA\right)^2 + q\phi,
+\end{equation}
+其中$\pp$是正则动量，$\AA$是磁场矢势，$\phi$是电势。
+按电动力学，电场与磁场用势能表示为：
+\begin{equation}
+    \bm{E} = -\frac1c \pd_t \AA - \nabla \phi, \quad
+    \bm{B} = \nabla \times \AA.
+\end{equation}
+
+考虑处于沿$z$轴的静磁场中的粒子，选取Landau规范
+\begin{equation}
+    A_x = -By, \quad A_y = A_z = 0,
+\end{equation}
+可得Hamiltonian：
+\begin{equation}
+    H = \frac{1}{2m}\left[ (p_x-qBy/c)^2 + p_y^2 + p_z^2 \right].
+\end{equation}
+鉴于$[p_x,H]=[p_z,H]=0$，$p_x,p_z$与$H$有共同本征态，取为
+\begin{equation}
+    \psi(x,y,z) = \ee^{\ii p_x x/\hbar} \ee^{\ii p_z z/\hbar} \phi_{p_x,p_z}(y),
+\end{equation}
+有
+\begin{equation}
+    H \phi(y) = \frac{1}{2m}\left[ (p_x-qB\hat{y}/c)^2 + \hat{p}_y^2 + p_z^2 \right] \phi(y),
+\end{equation}
+注意这里对算符$y,p_y$作了帽子记号，以区别于$p_x,p_z$（其作为$\phi(y)$的参数出现，是定值）。
+置
+\begin{equation}
+    y_0 = \frac{p_x c}{qB}, \quad \omega = \frac{qB}{mc},
+\end{equation}
+于是Hamiltonian成为
+\begin{equation}
+    \frac12 m\omega^2 (y-y_0)^2 + \frac{1}{2m}p_y^2 + \frac{1}{2m}p_z^2.
+\end{equation}
+可见除去$z$方向动能，这是一个原点位于$y=y_0$的一维谐振子，能级表达式为
+\begin{equation}
+    E_n = \hbar \omega \left( n + \frac12 \right).
+\end{equation}

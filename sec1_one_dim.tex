@@ -1,0 +1,97 @@
+\section{一维问题}
+
+% ===============
+\subsection{无限深方势阱}
+
+我们设无限深方势阱位于$0<x<a$，势阱中$V=0$，由驻波条件给出势阱中的波函数
+\begin{equation}
+    \psi_n(x) = \sqrt{\frac2a}\sin{k_n x}, \quad k_n = \frac{n\pi}{a},
+\end{equation}
+对应的能量为
+\begin{equation}
+    E_n = \frac{\hbar^2 k_n^2}{2m} = \frac{\hbar^2 \pi^2 n^2}{2ma^2}.
+\end{equation}
+注意：记忆能级不靠背诵，利用$p=\hbar k$及$E=p^2/2m$即可定出能级。
+
+在求解如$x,p,x^2,p^2,H$等物理量的平均值时，注意：
+\begin{itemize}
+    \item 不少情况下，利用波函数的对称性及不同能级波函数的正交性可简化问题。
+    \item 对于不变的势阱，$p,H$是守恒量，因此其平均值不随时间变化。
+    \item 熟记二倍角公式：
+    \begin{equation}
+    \begin{aligned}
+        \sin 2\alpha &= 2\sin\alpha\cos\alpha, \\
+        \cos 2\alpha &= \cos^2\alpha - \sin^2\alpha = 2\cos^2\alpha - 1 = 1 - 2\sin^2\alpha.
+    \end{aligned}
+    \end{equation}
+    \item 熟记积化和差公式：
+    \begin{equation}
+    \begin{aligned}
+        2\cos\alpha\cos\beta &= \cos(\alpha-\beta) + \cos(\alpha+\beta), \\
+        2\sin\alpha\sin\beta &= \cos(\alpha-\beta) - \cos(\alpha+\beta), \\
+        2\sin\alpha\cos\beta &= \sin(\alpha+\beta) + \sin(\alpha-\beta).
+    \end{aligned}
+    \end{equation}
+\end{itemize}
+
+% ======================
+\subsection{谐振子：坐标表象}
+
+一维谐振子势为
+\begin{equation}
+    V(x) = \frac12 m \omega^2 x^2.
+\end{equation}
+
+置
+\begin{equation}
+    \alpha = \sqrt{\frac{m\omega}{\hbar}},
+\end{equation}
+解得谐振子的波函数为
+\begin{equation}
+    \psi(x) = \sqrt{\frac{\alpha}{\sqrt\pi 2^n n!}} H_n(\alpha x) e^{-\alpha^2 x^2/2},
+\end{equation}
+其中$H_n$为$n$阶Hermite函数。
+
+能级为
+\begin{equation}
+    E_n = (n + \frac12) \hbar \omega.
+\end{equation}
+
+
+% ======================
+\subsection{谐振子：Fock表象}
+
+引入无量纲算符
+\begin{equation}
+    Q \coloneq \sqrt{\frac{m\omega}{\hbar}} x ,\quad P \coloneq \sqrt{\frac{1}{m\hbar\omega}} p,
+\end{equation}
+其对易子$[Q,P]=\ii$，
+进一步定义算符
+\begin{equation}
+    a \coloneq \frac{1}{\sqrt{2}} (Q+\ii P) ,\quad a^\dag \coloneq \frac{1}{\sqrt{2}} (Q-\ii P),
+\end{equation}
+其对易子$[a,a^\dag]=1$，可得
+\begin{equation}
+    H = (a^\dag a + \frac12) \hbar\omega.
+\end{equation}
+由
+\begin{equation}
+    a^\dag a \ket{n} = n \ket{n}
+\end{equation}
+可见$a^\dag a$为谐振子的能级算符。
+
+$a$和$a^\dag$分别对应谐振子的\emph{降算符}与\emph{升算符}。
+由对易子$[a,a^\dag]=1$及Hamiltonian $H$的表达式可知：
+\begin{equation}
+    H a \ket{n} = (E_n - \hbar\omega) a \ket{n},\quad H a^\dag \ket{n} = (E_n + \hbar\omega) a^\dag \ket{n},
+\end{equation}
+
+$a$并非保留内积的幺正算符。
+通过归一条件$\braket{n}{n}=\braket{n-1}{n-1}=1$可得
+\begin{equation}
+    a\ket{n} = \sqrt{n}\ket{n-1}.
+\end{equation}
+同理有
+\begin{equation}
+    a^\dag \ket{n} = \sqrt{n+1}\ket{n+1}.
+\end{equation}
