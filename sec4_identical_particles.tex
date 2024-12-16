@@ -1,8 +1,8 @@
 \section{全同粒子}
 
-\emph{Boson玻色子}：$s$为整数，波函数满足交换对称性。
+\emph{玻色子（Boson）}：$s$为整数，波函数满足交换对称性。
 
-\emph{Fermion费米子}：$s$为半奇数，波函数满足交换反对称性，因而有Pauli不相容原理。
+\emph{费米子（Fermion）}：$s$为半奇数，波函数满足交换反对称性，因而有Pauli不相容原理。
 
 一个常见的问题是计算Bose, Fermi与经典体系粒子的组合数：
 $n$个全同粒子处于$m$个可能的单粒子态，对于Bose子, Fermi子与经典粒子，可能有几种组合方式？
@@ -12,14 +12,14 @@ $n$个全同粒子处于$m$个可能的单粒子态，对于Bose子, Fermi子与
     N_{\rm{classical}} = m^n.
 \end{equation}
 
-对于Fermi子，粒子不可分辨，可以用隔板法求取可能的组合数：
+对于Bose子，粒子不可分辨，可以用隔板法求取可能的组合数：
 设置$m-1$个隔板，与$n$个粒子混合排列，这样$n$个粒子就被隔板分至$m$个态上，有$(n+m-1)!$种方式。
 隔板与粒子分别不可分辨，因此除以各自排列数$(m-1)!$与$n!$
 \begin{equation}
-    N_{\rm{Fermi}} = \frac{(n+m-1)!}{(m-1)! n!}.
+    N_{\rm{Bose}} = \frac{(n+m-1)!}{(m-1)! n!}.
 \end{equation}
 
-对于Bose子，粒子不可分辨，且是互斥的，于是从$m\ (m>n)$个态中选取$n$个分别放入一个粒子即可，可能的组合数：
+对于Fermi子，粒子不可分辨，且是互斥的，于是从$m\ (m>n)$个态中选取$n$个分别放入一个粒子即可，可能的组合数：
 \begin{equation}
-    N_{\rm{Bose}} = P_m^n = \frac{m!}{n!(m-n)!}.
+    N_{\rm{Fermi}} = P_m^n = \frac{m!}{n!(m-n)!}.
 \end{equation}
